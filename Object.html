@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <title>结构</title>
+</head>
+<body>
+    <div class="container">
+        <table class="table table-stripped">
+            <thead>
+                <th>教练</th>
+                <th>助教</th>
+                <th>球员</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id='captain'></td>
+                    <td id='assistant'></td>
+                    <td id='players'></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="box">
+        作者：<h4 id="username"></h4>
+        联系方式：<a id="tel"></p>
+        网站：<p id="website"></p>
+    </div>
+    <script>
+        const details = ['Wes Bos',123,'wesbos.com',15988888888];
+        const [name,id,website,tel] = details;
+        const oTel = document.getElementById('tel');
+        // oTel.href = `tel:${tel}`;
+
+        console.log(name, id, website,tel);
+        document.getElementById('username').innerHTML = name;
+        document.getElementById('tel').innerHTML = tel;
+        // document.getElementById('website').innerHTML = website;
+        // document.getElementById('username').innerHTML = details[0];
+        // document.getElementById('tel').innerHTML = details[1];
+        // document.getElementById('website').innerHTML = details[2];
+
+        const data = `Basketball,Sports,90201,23,wes,bos,cool`;
+        //将以上字符串，成为数组，随后解构出sportName，category，sku
+
+        // const[sportName,category,sku] = data.split(",");
+        // console.log(sportName,category,sku);
+
+        const team = ['Wes','Harry','Sarah','keegan','Riker'];
+        [captain,assistant,...players] = team;
+        console.log(captain,assistant,players);
+
+        // const obj = {captain,assistant,players};
+        // const obj = {captain:captain,assistant:assistant,players:players};
+        //json对象名和值一致，可不写key
+        for(key in obj){
+            document.querySelector(`#${key}`).innerText = obj[key];
+        }
+
+
+        
+
+    </script>
+</body>
+</html>
